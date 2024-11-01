@@ -1,0 +1,12 @@
+services:
+  gatus:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./config.yml:/app/config.yml
+    environment:
+      - GATUS_CONFIG=/app/config.yml
+    restart: always
